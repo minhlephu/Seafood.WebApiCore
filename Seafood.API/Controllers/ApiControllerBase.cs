@@ -2,8 +2,8 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
-using Seafood.CORE.Base.Interfaces;
-using Seafood.CORE.Base.Models;
+using Seafood.INFRASTRUCTURE.Base.Interfaces;
+using Seafood.INFRASTRUCTURE.Base.Models;
 
 namespace Seafood.API.Controllers
 {

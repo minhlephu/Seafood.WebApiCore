@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seafood.CORE.Base.Models
+namespace Seafood.INFRASTRUCTURE.Base.Models
 {
     public class JwtModel
     {

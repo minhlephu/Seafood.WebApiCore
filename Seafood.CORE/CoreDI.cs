@@ -3,8 +3,11 @@ using Seafood.CORE.AutoMapper;
 using System.Reflection;
 using Microsoft.Extensions.Options;
 using Microsoft.EntityFrameworkCore;
-using Seafood.CORE.Base.Interfaces;
-using Seafood.CORE.Base.Configurations;
+using Seafood.INFRASTRUCTURE.Base.Interfaces;
+using Seafood.INFRASTRUCTURE.Base.Configurations;
+using Seafood.INFRASTRUCTURE;
+using Seafood.CORE.Repositories;
+using Seafood.CORE.Repositories.UserRepo;
 
 namespace Seafood.CORE
 {
@@ -18,9 +21,14 @@ namespace Seafood.CORE
             // Add AutoMapper
             services.AddAutoMapper(typeof(MapperProfile).Assembly);
 
-            services.AddSingleton<IJwtService, JwtService>();
+            services.AddScoped<ISeafoodDbContext, SeafoodDbContext>();
 
             services.AddSingleton<IJwtService, JwtService>();
+
+            #region Repositories
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+            services.AddTransient<IUserRepository, UserRepository>();
+            #endregion
         }
     }
 }

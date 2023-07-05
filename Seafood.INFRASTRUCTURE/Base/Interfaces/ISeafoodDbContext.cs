@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Seafood.ARCHITECTURE.Entities.Models;
 
-namespace Seafood.CORE.Base.Interfaces
+namespace Seafood.INFRASTRUCTURE.Base.Interfaces
 {
     public interface ISeafoodDbContext
     {
@@ -44,5 +44,7 @@ namespace Seafood.CORE.Base.Interfaces
         public DbSet<Voucher> Vouchers { get; set; }
 
         public DbSet<VoucherSeafood> VoucherSeafoods { get; set; }
+
+        Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }

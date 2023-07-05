@@ -1,4 +1,5 @@
-﻿using Seafood.ARCHITECTURE.Entities.Models;
+﻿using BCrypt.Net;
+using Seafood.ARCHITECTURE.Entities.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,5 +20,9 @@ namespace Seafood.ARCHITECTURE.Constants
         public const string AUTHORIZE_ROLE = nameof(User.Role);
         public const string AUTHORIZE_ROLE_ADMIN = "admin";
         public const string AUTHORIZE_ROLE_USER = "user";
+
+        // SECURITY
+        public const int BCRYPT_SALT = 11;
+        public const HashType BCRYPT_HASHTYPE = HashType.SHA256;
     }
 }

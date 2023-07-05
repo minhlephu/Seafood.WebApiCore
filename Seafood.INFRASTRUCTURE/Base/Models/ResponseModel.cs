@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seafood.CORE.Base.Models
+namespace Seafood.INFRASTRUCTURE.Base.Models
 {
     public class ResponseModel
     {
         [JsonProperty("success")]
         public bool Success { get; set; }
 
-        [JsonProperty("errorCode")]
-        public string ErrorCode { get; set; }
+        [JsonProperty("code")]
+        public int Code { get; set; }
 
         [JsonProperty("message")]
         public string Message { get; set; }
@@ -24,7 +24,7 @@ namespace Seafood.CORE.Base.Models
         public ResponseModel()
         {
             Success = true;
-            ErrorCode = string.Empty;
+            Code = 200;
             Message = string.Empty;
             Data = new Dictionary<string, object>();
         }

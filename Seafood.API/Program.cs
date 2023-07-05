@@ -2,8 +2,8 @@ using Microsoft.EntityFrameworkCore;
 using Seafood.INFRASTRUCTURE;
 using Seafood.ARCHITECTURE.Entities.Models;
 using Seafood.CORE;
-using Seafood.CORE.Base.Interfaces;
-using Seafood.CORE.Base.Configurations;
+using Seafood.INFRASTRUCTURE.Base.Interfaces;
+using Seafood.INFRASTRUCTURE.Base.Configurations;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,7 +28,7 @@ builder.Services.AddRouting(
 
 // Add DbContext
 builder.Services.AddDbContext<SeafoodDbContext>(option => option.UseSqlServer(builder.Configuration.GetConnectionString("SeafoodConnection"),
-    option => option.MigrationsAssembly("ToolApi.CORE")));
+    option => option.MigrationsAssembly("Seafood.ARCHITECTURE")));
 
 // Add DI in Seafood.CORE
 builder.Services.AddCoreDI();

@@ -16,12 +16,9 @@ public partial class User
     public string Username { get; set; } = null!;
 
     [StringLength(250)]
-    [Unicode(false)]
     public string PasswordHash { get; set; } = null!;
 
-    [StringLength(20)]
-    [Unicode(false)]
-    public string Salt { get; set; } = null!;
+    public int Salt { get; set; }
 
     [StringLength(100)]
     public string? DisplayName { get; set; }
@@ -35,7 +32,7 @@ public partial class User
 
     [StringLength(20)]
     [Unicode(false)]
-    public string Mobile { get; set; } = null!;
+    public string? Mobile { get; set; }
 
     [StringLength(250)]
     public string? Email { get; set; }
@@ -44,17 +41,17 @@ public partial class User
     public string? Company { get; set; }
 
     [StringLength(100)]
-    public string? Role { get; set; }
+    public string Role { get; set; } = null!;
 
-    public bool? IsAdminUser { get; set; }
+    public bool IsAdminUser { get; set; }
 
-    public bool? IsLocked { get; set; }
+    public bool IsLocked { get; set; }
 
     public string? Session { get; set; }
 
     public string? SessionId { get; set; }
 
-    public bool IsDeleted { get; set; }
+    public bool? IsDeleted { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime? DeletedAt { get; set; }
@@ -63,10 +60,10 @@ public partial class User
     public string? DeletedBy { get; set; }
 
     [Column(TypeName = "datetime")]
-    public DateTime CreatedAt { get; set; }
+    public DateTime? CreatedAt { get; set; }
 
     [StringLength(100)]
-    public string CreatedBy { get; set; } = null!;
+    public string? CreatedBy { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime? UpdatedAt { get; set; }

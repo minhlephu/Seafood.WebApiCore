@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
 using Microsoft.EntityFrameworkCore;
-using Seafood.ARCHITECTURE.Entities.Models;
-using Seafood.INFRASTRUCTURE.Base.Interfaces;
 
-namespace Seafood.INFRASTRUCTURE;
+namespace Seafood.ARCHITECTURE.Entities.Models;
 
-public partial class SeafoodDbContext : DbContext, ISeafoodDbContext
+public partial class SeafoodContext : DbContext
 {
-    public SeafoodDbContext()
+    public SeafoodContext()
     {
     }
 
-    public SeafoodDbContext(DbContextOptions<SeafoodDbContext> options)
+    public SeafoodContext(DbContextOptions<SeafoodContext> options)
         : base(options)
     {
     }
@@ -191,11 +188,8 @@ public partial class SeafoodDbContext : DbContext, ISeafoodDbContext
             entity.HasKey(e => e.Id).HasName("PK__Users__3214EC072E83A939");
 
             entity.Property(e => e.Id).ValueGeneratedNever();
-            entity.Property(e => e.IsAdminUser).HasDefaultValueSql("((0))");
-            entity.Property(e => e.IsLocked).HasDefaultValueSql("((0))");
+            entity.Property(e => e.IsDeleted).HasDefaultValueSql("((0))");
             entity.Property(e => e.Mobile).IsFixedLength();
-            entity.Property(e => e.PasswordHash).IsFixedLength();
-            entity.Property(e => e.Salt).IsFixedLength();
             entity.Property(e => e.Sex).HasDefaultValueSql("((1))");
             entity.Property(e => e.Username).IsFixedLength();
         });
@@ -215,36 +209,7 @@ public partial class SeafoodDbContext : DbContext, ISeafoodDbContext
         });
 
         OnModelCreatingPartial(modelBuilder);
-
-
-        modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
-        base.OnModelCreating(modelBuilder);
     }
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
-
-
-    public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
-    {
-        //foreach (Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry<BaseEntityWithDateModified> entry in ChangeTracker.Entries<BaseEntityWithDateModified>())
-        //{
-        //    switch (entry.State)
-        //    {
-        //        case EntityState.Added:
-        //            entry.Entity.CreatedBy = _currentUserService.Id;
-        //            entry.Entity.DateCreated = _dateTime.Now;
-        //            break;
-
-        //        case EntityState.Modified:
-        //            entry.Entity.LastModifiedBy = _currentUserService.Id;
-        //            entry.Entity.DateModified = _dateTime.Now;
-        //            break;
-        //    }
-        //}
-
-        var result = await base.SaveChangesAsync(cancellationToken);
-
-        return result;
-    }
 }

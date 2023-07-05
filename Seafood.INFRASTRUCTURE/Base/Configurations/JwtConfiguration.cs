@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Seafood.ARCHITECTURE.Constants;
-using Seafood.CORE.Base.Interfaces;
-using Seafood.CORE.Base.Models;
+using Seafood.INFRASTRUCTURE.Base.Interfaces;
+using Seafood.INFRASTRUCTURE.Base.Models;
 using System;
 using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
@@ -13,7 +13,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Seafood.CORE.Base.Configurations
+namespace Seafood.INFRASTRUCTURE.Base.Configurations
 {
     public static class JwtConfiguration
     {
