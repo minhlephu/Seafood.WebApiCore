@@ -1,4 +1,5 @@
 - Connect DB
 Scaffold-DbContext "Server=V000284\MSSQLSERVER01;Database=Seafood;Trusted_Connection=True;MultipleActiveResultSets=true;TrustServerCertificate=True" Microsoft.EntityFrameWorkCore.SqlServer -outputdir Entities/Models -context SeafoodDbContext -contextdir Models -DataAnnotations -Force
 
-
+- Middleware
+https://www.dotnetcurry.com/aspnet-core/middleware-in-aspnetcore

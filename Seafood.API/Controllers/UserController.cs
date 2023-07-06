@@ -9,7 +9,6 @@ namespace Seafood.API.Controllers
     public class UserController : ApiControllerBase<UserController>
     {
         [Authorize]
-        [RequiresClaim("Role", "superadmin")]
         [HttpGet]
         [Route("[controller]/getall")]
         public async Task<ActionResult> GetAll()
@@ -23,6 +22,8 @@ namespace Seafood.API.Controllers
             return StatusCode(ResponseModel.Code, ResponseModel);
         }
 
+        [Authorize]
+        [RequiresClaim("Role", "superadmin")]
         [HttpPost]
         [Route("[controller]/add")]
         public async Task<ActionResult> Add([FromBody] UserMediatModel userMediatModel)

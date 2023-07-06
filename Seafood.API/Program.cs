@@ -4,6 +4,10 @@ using Seafood.ARCHITECTURE.Entities.Models;
 using Seafood.CORE;
 using Seafood.INFRASTRUCTURE.Base.Interfaces;
 using Seafood.INFRASTRUCTURE.Base.Configurations;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Cors.Infrastructure;
+using Microsoft.AspNetCore.HttpsPolicy;
+using Seafood.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -46,6 +50,20 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+#region 3864 my config
+// Middleware
+app.UseMiddleware<FirstMiddleware>();
+//app.UseMiddleware<LoggingMiddleware>();
+//app.UseMiddleware<AuthenticationMiddleware>();
+//app.UseMiddleware<RoutingMiddleware>();
+//app.UseMiddleware<ExceptionHandlingMiddleware>();
+//app.UseMiddleware<CorsMiddleware>();
+//app.UseMiddleware<GzipCompressionMiddleware>();
+//app.UseMiddleware<HttpsRedirectionMiddleware>();
+
+app.UseAuthentication();
+
+#endregion
 
 app.UseAuthorization();
 
