@@ -39,8 +39,8 @@ namespace Seafood.API.Middlewares
             // Thiết lập phần thân của phản hồi
             context.Response.ContentType = "application/json";
 
-            string responseBody = await new StreamReader(context.Response.Body).ReadToEndAsync();
-            context.Response.Body = new MemoryStream(Encoding.UTF8.GetBytes(requestInfoJson.ToString() + responseBody));
+            //string responseBody = await new StreamReader(context.Response.Body).ReadToEndAsync();
+            //context.Response.Body = new MemoryStream(Encoding.UTF8.GetBytes(requestInfoJson.ToString() + responseBody));
 
             await context.Response.WriteAsync(requestInfoJson);
         }
