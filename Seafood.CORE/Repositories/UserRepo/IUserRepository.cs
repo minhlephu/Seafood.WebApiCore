@@ -13,5 +13,7 @@ namespace Seafood.CORE.Repositories.UserRepo
         bool IsAdmin(User user);
 
         Task<User> Login(string username, string passwordHash);
+
+        Task<User> Update(Guid Id, string username, string password, string role);
     }
 }

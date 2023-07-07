@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Seafood.CORE.MediatR.UserFuction.GetUserHandler;
 using Seafood.CORE.MediatR.UserFuction.AddUserHandler;
+using Seafood.CORE.MediatR.UserFuction.Model;
 
 namespace Seafood.CORE.AutoMapper
 {

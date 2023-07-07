@@ -35,5 +35,29 @@ namespace Seafood.CORE.Repositories.UserRepo
                 return null;
             }
         }
+
+        /// <summary>
+        /// Lập trình chỉ chỉnh sửa được password và role
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <param name="role"></param>
+        /// <returns></returns>
+        public async Task<User> Update(Guid Id, string username, string password, string role)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(i => i.Id == Id);
+            if (user != null)
+            {
+                user.Username = username;
+                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
+                user.Role = role;
+                _context.Users.Update(user);
+                await _context.SaveChangesAsync();
+                return user;
+            }
+            else
+                return null;
+        }
     }
 }

@@ -32,7 +32,15 @@ namespace Seafood.CORE.Repositories
 
         public async Task<IEnumerable<T>> Find(Expression<Func<T, bool>> expression)
         {
-            return await _context.Set<T>().Where(expression).ToListAsync();
+            var result = await _context.Set<T>().Where(expression).ToListAsync();
+            if (result.Count > 0)
+            {
+                return result;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public async Task<IEnumerable<T>> GetAll()
@@ -42,19 +50,20 @@ namespace Seafood.CORE.Repositories
 
         public async Task<T> GetById(int id)
         {
-            return await _context.Set<T>().FindAsync(id);
+            var entity = await _context.Set<T>().FindAsync(id);
+            return entity;
         }
 
         public async Task Remove(T entity)
         {
             _context.Set<T>().Remove(entity);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
 
         public async Task RemoveRange(IEnumerable<T> entities)
         {
             _context.Set<T>().RemoveRange(entities);
-            _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();
         }
     }
 }

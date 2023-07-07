@@ -3,6 +3,7 @@ using BCrypt.Net;
 using MediatR;
 using Seafood.ARCHITECTURE.Constants;
 using Seafood.ARCHITECTURE.Entities.Models;
+using Seafood.CORE.MediatR.UserFuction.Model;
 using Seafood.CORE.Repositories.UserRepo;
 using Seafood.INFRASTRUCTURE.Base.Interfaces;
 using System;
@@ -56,10 +57,4 @@ namespace Seafood.CORE.MediatR.UserFuction.AddUserHandler
         }
     }
 
-    public class UserMediatModel
-    {
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Role { get; set; }
-    }
 }
