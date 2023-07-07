@@ -44,8 +44,15 @@ namespace Seafood.API.Controllers
 
         [HttpPut]
         [Route("[controller]/update")]
-        public async Task<ActionResult> Update([FromBody] UserMediatUpdateModel userMediatUpdateModel)
+        public async Task<ActionResult> Update(string id, [FromBody] UserMediatModel userMediatModel)
         {
+            UserMediatUpdateModel userMediatUpdateModel = new UserMediatUpdateModel()
+            {
+                Id = Guid.Parse(id),
+                Username = userMediatModel.Username,
+                Password = userMediatModel.Password,
+                Role = userMediatModel.Role,
+            };
             var user = await Mediator.Send(new UpdateUserCommand(userMediatUpdateModel));
             if (user != null)
             {
@@ -65,7 +72,7 @@ namespace Seafood.API.Controllers
             var user = await Mediator.Send(new DeleteUserCommand() { Id = Guid.Parse(id) });
             if (user != null)
             {
-                ResponseModel.Add("userDelete", user);
+                ResponseModel.Add("userDeleted", user);
             }
             else
             {
