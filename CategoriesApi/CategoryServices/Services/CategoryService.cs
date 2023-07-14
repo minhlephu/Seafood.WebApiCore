@@ -24,6 +24,9 @@ namespace CategoryServices.Services
         public async Task<CreateOrUpdateCategoryResponse> CreateCategory(CreateOrUpdateCategoryRequest request)
         {
             var category = _mapper.Map<Category>(request);
+            category.Id = Guid.NewGuid();
+            category.CreatedAt = DateTime.UtcNow;
+            category.CreatedBy = "dev_local";
             var response = await _repository.Save(category);
             return _mapper.Map<CreateOrUpdateCategoryResponse>(response);
 
@@ -56,6 +59,8 @@ namespace CategoryServices.Services
         {
             var category = _mapper.Map<Category>(request);
             category.Id = id;
+            category.UpdatedAt = DateTime.UtcNow;
+            category.CreatedBy = "dev_local";
             var response = await _repository.Update(category);
             return _mapper.Map<CreateOrUpdateCategoryResponse>(response);
         }

@@ -70,6 +70,7 @@ namespace CategoryServices.Services
                 throw new Exception("Username or Email is already taken");
             }
             var user = _mapper.Map<User>(request);
+            user.Id = Guid.NewGuid();
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
             user.Roles = Role.User.ToString();
             user.CreatedAt = DateTime.UtcNow;

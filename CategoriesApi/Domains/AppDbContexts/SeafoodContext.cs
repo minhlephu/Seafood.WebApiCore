@@ -432,7 +432,7 @@ public partial class SeafoodContext : DbContext
         });
 
         OnModelCreatingPartial(modelBuilder);
-    }
+    }    
 
     partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
 }
