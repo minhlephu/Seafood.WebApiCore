@@ -1,9 +1,11 @@
-﻿using CategoryServices.Interfaces;
+﻿using CategoriesApi.Configurations;
+using CategoryServices.Interfaces;
 using Domains.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CategoriesApi.Controllers
 {
+    [Authorize(Domains.Models.Role.User)]
     [ApiController]
     [Route("/api/categories")]
     public class CategoriesController : ControllerBase
@@ -53,7 +55,7 @@ namespace CategoriesApi.Controllers
         {
             if(!ExistsCategoryById(id).Result)
             {
-                return NotFound("Category Id is not found!");
+                return NotFound("Id is not found!");
             }
             if (!ModelState.IsValid)
             {
@@ -61,6 +63,17 @@ namespace CategoriesApi.Controllers
             }            
             var response = await _categoryService.UpdateCategory(id, request);
             return Ok(response);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteCategory(Guid id)
+        {
+            if(!ExistsCategoryById(id).Result)
+            {
+                return NotFound("Id is not found!");
+            }
+            await _categoryService.DeleteCategory(id);
+            return Ok(new {message = "Deleted success!"});
         }
 
         private async Task<bool> ExistsCategoryById(Guid id)

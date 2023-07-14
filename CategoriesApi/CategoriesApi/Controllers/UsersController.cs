@@ -1,6 +1,8 @@
 ﻿using CategoriesApi.Interfaces;
 using CategoryServices.Interfaces;
 using Domains.DTOs;
+using Domains.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace CategoriesApi.Controllers
@@ -18,6 +20,7 @@ namespace CategoriesApi.Controllers
             _jwtUtil = jwtUtil;
         }
 
+        [AllowAnonymous]
         [HttpPost("signin")]
         public async Task<IActionResult> SignIn(SignInRequest request)
         {
@@ -26,6 +29,7 @@ namespace CategoriesApi.Controllers
             return Ok(response);
         }
 
+        [AllowAnonymous]
         [HttpPost]
         public async Task<IActionResult> SignUp(SignUpRequest request)
         {
@@ -33,6 +37,7 @@ namespace CategoriesApi.Controllers
             return Ok(response);
         }
 
+        [CategoriesApi.Configurations.Authorize(Role.Admin)]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetUserById(Guid id)
         {
@@ -44,6 +49,7 @@ namespace CategoriesApi.Controllers
             return Ok(response);
         }
 
+        [CategoriesApi.Configurations.Authorize(Role.Admin)]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteUserById(Guid id)
         {

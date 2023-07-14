@@ -56,7 +56,7 @@ namespace CategoryServices.Services
         {
             var category = _mapper.Map<Category>(request);
             category.Id = id;
-            var response = await _repository.Save(category);
+            var response = await _repository.Update(category);
             return _mapper.Map<CreateOrUpdateCategoryResponse>(response);
         }
     }

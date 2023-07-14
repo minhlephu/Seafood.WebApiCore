@@ -22,6 +22,11 @@ namespace CategoryServices.Services
             _mapper = mapper;
         }
 
+        public async Task<User> AddUserToContext(Guid id)
+        {
+            return await _repository.FindById(id);
+        }
+
         public async Task DeleteUser(Guid id)
         {
             await _repository.Delete(id);
@@ -68,6 +73,7 @@ namespace CategoryServices.Services
             user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
             user.Roles = Role.User.ToString();
             user.CreatedAt = DateTime.UtcNow;
+            user.CreatedBy = "dev_local";
 
             var response = await _repository.Save(user);
             return _mapper.Map<SignUpResponse>(response);

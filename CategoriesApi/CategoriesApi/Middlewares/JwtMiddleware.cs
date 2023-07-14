@@ -18,7 +18,7 @@ namespace CategoriesApi.Middlewares
             var id = jwtUtil.ValidateJwtToken(token);
             if (id != null)
             {
-                context.Items["User"] = userService.GetUserById(id.Value);
+                context.Items["User"] = userService.AddUserToContext(id.Value).Result;
             }
             await _requestDelegate(context);
         }

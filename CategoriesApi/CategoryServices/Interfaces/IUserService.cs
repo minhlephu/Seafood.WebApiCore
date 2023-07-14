@@ -1,4 +1,5 @@
 ﻿using Domains.DTOs;
+using Domains.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,8 @@ namespace CategoryServices.Interfaces
         Task<SignInResponse> SignIn(SignInRequest request);
 
         Task<SignUpResponse> SignUp(SignUpRequest request);
+
+        Task<User> AddUserToContext(Guid id);
 
         Task<UserResponse> GetUserById(Guid id);
 
