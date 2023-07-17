@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Domains.Models;
 
-public partial class Category
+public partial class Category : AbstractModel
 {
     public Guid Id { get; set; }
 
@@ -16,18 +16,4 @@ public partial class Category
     public string? Code { get; set; }
 
     public string? Icon { get; set; }
-
-    public bool IsDeleted { get; set; }
-
-    public DateTime? DeletedAt { get; set; }
-
-    public string? DeletedBy { get; set; }
-
-    public DateTime? CreatedAt { get; set; }
-
-    public string? CreatedBy { get; set; }
-
-    public DateTime? UpdatedAt { get; set; }
-
-    public string? UpdatedBy { get; set; }
 }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CategoryServices.Repositories
 {
-    public class CategoryRepository : ICategoryRepository
+    public class CategoryRepository : GenericRepository<Category>
     {
         private readonly SeafoodContext _context;
 
@@ -32,12 +32,12 @@ namespace CategoryServices.Repositories
             return await _context.Categories.AnyAsync(_ => _.Id == id);
         }
 
-        public async Task<IEnumerable<Category>> FindAll()
+        public async Task<IEnumerable<Category>> GetAll()
         {
             return await _context.Categories.ToListAsync();
         }
 
-        public async Task<Category> FindById(Guid id)
+        public async Task<Category> GetById(Guid id)
         {
             return await _context.Categories.FirstOrDefaultAsync(_ => _.Id == id);
         }

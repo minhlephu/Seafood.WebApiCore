@@ -22,14 +22,14 @@ namespace CategoryServices.Services
             _mapper = mapper;
         }
 
-        public async Task<User> AddUserToContext(Guid id)
+        public async Task<User> GetUserToContext(Guid id)
         {
-            return await _repository.FindById(id);
+            return await _repository.GetById(id);
         }
 
         public async Task DeleteUser(Guid id)
         {
-            await _repository.Delete(id);
+            await _repository.DeleteById(id);
         }
 
         public async Task<bool> ExistsUserByEmail(string email)
@@ -49,13 +49,13 @@ namespace CategoryServices.Services
 
         public async Task<UserResponse> GetUserById(Guid id)
         {
-            var user = await _repository.FindById(id);
+            var user = await _repository.GetById(id);
             return _mapper.Map<UserResponse>(user);
         }
 
         public async Task<SignInResponse> SignIn(SignInRequest request)
         {
-            var user = await _repository.FindByUsername(request.Username);
+            var user = await _repository.GetByUsername(request.Username);
             if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
             {
                 throw new Exception("Username or password is incorrect");

@@ -6,6 +6,7 @@ using CategoryServices.Mappers;
 using CategoryServices.Repositories;
 using CategoryServices.Services;
 using Domains.AppDbContexts;
+using Domains.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -46,7 +47,7 @@ builder.Services.AddSwaggerGen(options =>
 
 builder.Services.AddDbContext<SeafoodContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<GenericRepository<Category>, CategoryRepository>();
 builder.Services.AddScoped<ICategoryService, CategoryService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IUserService, UserService>();

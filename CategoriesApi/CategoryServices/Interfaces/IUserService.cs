@@ -14,7 +14,7 @@ namespace CategoryServices.Interfaces
 
         Task<SignUpResponse> SignUp(SignUpRequest request);
 
-        Task<User> AddUserToContext(Guid id);
+        Task<User> GetUserToContext(Guid id);
 
         Task<UserResponse> GetUserById(Guid id);
 

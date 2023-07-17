@@ -25,8 +25,8 @@ namespace CategoriesApi.Controllers
         public async Task<IActionResult> SignIn(SignInRequest request)
         {
             var response = await _userService.SignIn(request);
-            response.Token = _jwtUtil.GenerateJwtToken(response.Id);
-            return Ok(response);
+            var jwtToken = _jwtUtil.GenerateJwtToken(response.Id);
+            return Ok(new {token = jwtToken, response});
         }
 
         [AllowAnonymous]

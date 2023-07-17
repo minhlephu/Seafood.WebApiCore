@@ -12,16 +12,16 @@ namespace CategoryServices.Services
 {
     public class CategoryService : ICategoryService
     {
-        private readonly ICategoryRepository _repository;
-        private IMapper _mapper;
+        private readonly GenericRepository<Category> _repository;
+        private readonly IMapper _mapper;
 
-        public CategoryService(ICategoryRepository repository, IMapper mapper)
+        public CategoryService(GenericRepository<Category> repository, IMapper mapper)
         {
             _repository = repository;
             _mapper = mapper;
         }
 
-        public async Task<CreateOrUpdateCategoryResponse> CreateCategory(CreateOrUpdateCategoryRequest request)
+        public async Task<CreateOrUpdateCategoryResponse> Create(CreateOrUpdateCategoryRequest request)
         {
             var category = _mapper.Map<Category>(request);
             category.Id = Guid.NewGuid();
@@ -29,33 +29,32 @@ namespace CategoryServices.Services
             category.CreatedBy = "dev_local";
             var response = await _repository.Save(category);
             return _mapper.Map<CreateOrUpdateCategoryResponse>(response);
+        }       
 
-        }
-
-        public async Task DeleteCategory(Guid id)
+        public async Task DeleteById(Guid id)
         {
             await _repository.DeleteById(id);
         }
 
-        public async Task<bool> ExistsCategoryById(Guid id)
+        public async Task<bool> ExistsById(Guid id)
         {
             return await _repository.ExistsById(id);
         }
 
-        public async Task<IEnumerable<CreateOrUpdateCategoryResponse>> GetCategories()
+        public async Task<IEnumerable<CreateOrUpdateCategoryResponse>> GetAll()
         {
-            var categories = await _repository.FindAll();
+            var categories = await _repository.GetAll();
             var reponses = categories.Select(c => _mapper.Map<CreateOrUpdateCategoryResponse>(c));
             return reponses;
         }
 
-        public async Task<CreateOrUpdateCategoryResponse> GetCategory(Guid id)
+        public async Task<CreateOrUpdateCategoryResponse> GetById(Guid id)
         {
-            var category = await _repository.FindById(id);
+            var category = await _repository.GetById(id);
             return _mapper.Map<CreateOrUpdateCategoryResponse>(category);
         }
 
-        public async Task<CreateOrUpdateCategoryResponse> UpdateCategory(Guid id, CreateOrUpdateCategoryRequest request)
+        public async Task<CreateOrUpdateCategoryResponse> Update(Guid id, CreateOrUpdateCategoryRequest request)
         {
             var category = _mapper.Map<Category>(request);
             category.Id = id;

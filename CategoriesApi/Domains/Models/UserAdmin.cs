@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Domains.Models;
 
-public partial class UserAdmin
+public partial class UserAdmin : AbstractModel
 {
     public Guid Id { get; set; }
 
@@ -34,18 +34,4 @@ public partial class UserAdmin
     public string? Session { get; set; }
 
     public string? SessionId { get; set; }
-
-    public bool IsDeleted { get; set; }
-
-    public DateTime? DeletedAt { get; set; }
-
-    public string? DeletedBy { get; set; }
-
-    public DateTime CreatedAt { get; set; }
-
-    public string CreatedBy { get; set; } = null!;
-
-    public DateTime? UpdatedAt { get; set; }
-
-    public string? UpdatedBy { get; set; }
 }

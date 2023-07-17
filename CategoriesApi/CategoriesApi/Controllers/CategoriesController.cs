@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CategoriesApi.Controllers
 {
-    [Authorize(Domains.Models.Role.User)]
+    //[Authorize(Domains.Models.Role.User)]
     [ApiController]
     [Route("/api/categories")]
     public class CategoriesController : ControllerBase
@@ -20,18 +20,25 @@ namespace CategoriesApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            var categories = await _categoryService.GetCategories();
-            if(categories == null)
+            try
             {
-                return NoContent();
+                var categories = await _categoryService.GetAll();
+                if (categories == null)
+                {
+                    return NoContent();
+                }
+                return Ok(categories);
             }
-            return Ok(categories);
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetCategory(Guid id)
         {
-            var category = await _categoryService.GetCategory(id);
+            var category = await _categoryService.GetById(id);
             if (category == null)
             {
                 return NotFound();
@@ -46,7 +53,7 @@ namespace CategoriesApi.Controllers
             {
                 return BadRequest();
             }
-            var response = await _categoryService.CreateCategory(request);
+            var response = await _categoryService.Create(request);
             return CreatedAtAction("GetCategory", new { id = response.Id }, response);
         }
 
@@ -61,7 +68,7 @@ namespace CategoriesApi.Controllers
             {
                 return BadRequest();
             }            
-            var response = await _categoryService.UpdateCategory(id, request);
+            var response = await _categoryService.Update(id, request);
             return Ok(response);
         }
 
@@ -72,13 +79,13 @@ namespace CategoriesApi.Controllers
             {
                 return NotFound("Id is not found!");
             }
-            await _categoryService.DeleteCategory(id);
+            await _categoryService.DeleteById(id);
             return Ok(new {message = "Deleted success!"});
         }
 
         private async Task<bool> ExistsCategoryById(Guid id)
         {
-            return await _categoryService.ExistsCategoryById(id);
+            return await _categoryService.ExistsById(id);
         }
     }
 }

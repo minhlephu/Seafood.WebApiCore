@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace CategoryServices.Interfaces
 {
-    public interface ICategoryService
+    public interface ICategoryService 
     {
-        Task<IEnumerable<CreateOrUpdateCategoryResponse>> GetCategories();
+        Task<IEnumerable<CreateOrUpdateCategoryResponse>> GetAll();
 
-        Task<CreateOrUpdateCategoryResponse> GetCategory(Guid id);
+        Task<CreateOrUpdateCategoryResponse> GetById(Guid id);
 
-        Task<CreateOrUpdateCategoryResponse> CreateCategory(CreateOrUpdateCategoryRequest request);
+        Task<CreateOrUpdateCategoryResponse> Create(CreateOrUpdateCategoryRequest request);
 
-        Task<CreateOrUpdateCategoryResponse> UpdateCategory(Guid id, CreateOrUpdateCategoryRequest request);
+        Task<CreateOrUpdateCategoryResponse> Update(Guid id, CreateOrUpdateCategoryRequest request);
 
-        Task DeleteCategory(Guid id);
+        Task DeleteById(Guid id);
 
-        Task<bool> ExistsCategoryById(Guid id);
+        Task<bool> ExistsById(Guid id);
     }
 }

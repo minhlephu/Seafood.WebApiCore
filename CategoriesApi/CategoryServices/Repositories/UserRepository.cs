@@ -19,7 +19,7 @@ namespace CategoryServices.Repositories
             _context = context;
         }
 
-        public async Task Delete(Guid id)
+        public async Task DeleteById(Guid id)
         {
             var user = await _context.Users.SingleOrDefaultAsync(x => x.Id == id);
             _context.Users.Remove(user);
@@ -41,17 +41,17 @@ namespace CategoryServices.Repositories
             return await _context.Users.AnyAsync(_ => _.Username == username);
         }
 
-        public async Task<IEnumerable<User>> FindAll()
+        public async Task<IEnumerable<User>> GetAll()
         {
             return await _context.Users.ToListAsync();
         }
 
-        public async Task<User> FindById(Guid id)
+        public async Task<User> GetById(Guid id)
         {
             return await _context.Users.FirstOrDefaultAsync(_ => _.Id == id);
         }
 
-        public async Task<User> FindByUsername(string username)
+        public async Task<User> GetByUsername(string username)
         {
             return await _context.Users.FirstOrDefaultAsync(_ => _.Username == username);
         }
@@ -61,6 +61,11 @@ namespace CategoryServices.Repositories
             var entity = _context.Users.Add(user);
             await _context.SaveChangesAsync();
             return entity.Entity;
+        }
+
+        public Task<User> Update(User entity)
+        {
+            return null;
         }
     }
 }

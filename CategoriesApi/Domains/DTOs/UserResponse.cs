@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Domains.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -49,5 +50,32 @@ namespace Domains.DTOs
         public DateTime? UpdatedAt { get; set; }
 
         public string? UpdatedBy { get; set; }
+
+        public UserResponse() { }
+
+        public UserResponse(User user)
+        {
+            Id = user.Id;
+            Username = user.Username;            
+            DisplayName = user.DisplayName;
+            Avarta = user.Avarta;
+            Birthday = user.Birthday;
+            Sex = user.Sex; 
+            Mobile = user.Mobile;
+            Email = user.Email;      
+            Company = user.Company;
+            Roles = user.Roles;
+            IsAdminUser = user.IsAdminUser;
+            IsLocked = user.IsLocked;
+            Session = user.Session;
+            SessionId = user.SessionId;
+            IsDeleted = user.IsDeleted;
+            DeletedAt = user.DeletedAt;
+            DeletedBy = user.DeletedBy;
+            CreatedAt = user.CreatedAt;
+            CreatedBy = user.CreatedBy;
+            UpdatedAt = user.UpdatedAt;
+            UpdatedBy = user.UpdatedBy;
+        }
     }
 }

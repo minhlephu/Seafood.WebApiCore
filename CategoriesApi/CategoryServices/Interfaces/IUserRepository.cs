@@ -7,19 +7,10 @@ using System.Threading.Tasks;
 
 namespace CategoryServices.Interfaces
 {
-    public interface IUserRepository
-    {
-        Task<IEnumerable<User>> FindAll();
+    public interface IUserRepository : GenericRepository<User>
+    {        
 
-        Task<User> Save(User user);
-
-        Task<User> FindById(Guid id);
-
-        Task<User> FindByUsername(string username);
-
-        Task Delete(Guid id);
-
-        Task<bool> ExistsById(Guid id);
+        Task<User> GetByUsername(string username);        
 
         Task<bool> ExistsByUsername(string username);
 
