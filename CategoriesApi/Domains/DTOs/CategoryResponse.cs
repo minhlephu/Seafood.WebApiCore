@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domains.DTOs
 {
-    public class CreateOrUpdateCategoryResponse
+    public class CategoryResponse
     {
         public Guid Id { get; set; }
 

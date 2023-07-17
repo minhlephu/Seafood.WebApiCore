@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CategoryServices.Interfaces
 {
-    public interface GenericRepository<T> where T : class
+    public interface IGenericRepository<T> where T : class
     {
         Task<IEnumerable<T>> GetAll();
 

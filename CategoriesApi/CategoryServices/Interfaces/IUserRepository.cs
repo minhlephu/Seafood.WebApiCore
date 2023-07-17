@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace CategoryServices.Interfaces
 {
-    public interface IUserRepository : GenericRepository<User>
+    public interface IUserRepository : IGenericRepository<User>
     {        
 
         Task<User> GetByUsername(string username);        

@@ -13,8 +13,8 @@ namespace CategoryServices.Mappers
     {
         public CategoryMapper()
         {
-            CreateMap<Category, CreateOrUpdateCategoryRequest>().ReverseMap();
-            CreateMap<Category, CreateOrUpdateCategoryResponse>().ReverseMap();
+            CreateMap<Category, CategoryRequest>().ReverseMap();
+            CreateMap<Category, CategoryResponse>().ReverseMap();
         }
     }
 }

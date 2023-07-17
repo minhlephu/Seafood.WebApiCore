@@ -14,10 +14,8 @@ namespace CategoryServices.Mappers
         public UserMapper()
         {
             CreateMap<User, SignInRequest>().ReverseMap();            
-            CreateMap<User, SignInResponse>().ReverseMap();
             
             CreateMap<User, SignUpRequest>().ReverseMap();
-            CreateMap<User, SignUpResponse>().ReverseMap();
 
             CreateMap<User, UserResponse>().ReverseMap();
         }

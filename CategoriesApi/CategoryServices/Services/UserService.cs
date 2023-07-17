@@ -53,17 +53,17 @@ namespace CategoryServices.Services
             return _mapper.Map<UserResponse>(user);
         }
 
-        public async Task<SignInResponse> SignIn(SignInRequest request)
+        public async Task<UserResponse> SignIn(SignInRequest request)
         {
             var user = await _repository.GetByUsername(request.Username);
             if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
             {
                 throw new Exception("Username or password is incorrect");
             }
-            return _mapper.Map<SignInResponse>(user);
+            return _mapper.Map<UserResponse>(user);
         }
 
-        public async Task<SignUpResponse> SignUp(SignUpRequest request)
+        public async Task<UserResponse> SignUp(SignUpRequest request)
         {
             if(await _repository.ExistsByUsername(request.Username) || await _repository.ExistsByEmail(request.Email))
             {
@@ -77,7 +77,7 @@ namespace CategoryServices.Services
             user.CreatedBy = "dev_local";
 
             var response = await _repository.Save(user);
-            return _mapper.Map<SignUpResponse>(response);
+            return _mapper.Map<UserResponse>(response);
         }
     }
 }

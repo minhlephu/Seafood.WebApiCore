@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace CategoriesApi.Controllers
 {
-    //[Authorize(Domains.Models.Role.User)]
+    [Authorize(Domains.Models.Role.User)]
     [ApiController]
     [Route("/api/categories")]
     public class CategoriesController : ControllerBase
@@ -47,7 +47,7 @@ namespace CategoriesApi.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateCategory(CreateOrUpdateCategoryRequest request)
+        public async Task<IActionResult> CreateCategory(CategoryRequest request)
         {
             if(!ModelState.IsValid)
             {
@@ -58,7 +58,7 @@ namespace CategoriesApi.Controllers
         }
 
         [HttpPatch("{id}")]
-        public async Task<IActionResult> UpdateCategory(Guid id, CreateOrUpdateCategoryRequest request)
+        public async Task<IActionResult> UpdateCategory(Guid id, CategoryRequest request)
         {
             if(!ExistsCategoryById(id).Result)
             {

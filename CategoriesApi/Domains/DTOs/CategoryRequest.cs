@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Domains.DTOs
 {
-    public class CreateOrUpdateCategoryRequest
+    public class CategoryRequest
     {
         public string? Name { get; set; }
 

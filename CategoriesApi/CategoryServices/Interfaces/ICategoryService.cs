@@ -9,13 +9,13 @@ namespace CategoryServices.Interfaces
 {
     public interface ICategoryService 
     {
-        Task<IEnumerable<CreateOrUpdateCategoryResponse>> GetAll();
+        Task<IEnumerable<CategoryResponse>> GetAll();
 
-        Task<CreateOrUpdateCategoryResponse> GetById(Guid id);
+        Task<CategoryResponse> GetById(Guid id);
 
-        Task<CreateOrUpdateCategoryResponse> Create(CreateOrUpdateCategoryRequest request);
+        Task<CategoryResponse> Create(CategoryRequest request);
 
-        Task<CreateOrUpdateCategoryResponse> Update(Guid id, CreateOrUpdateCategoryRequest request);
+        Task<CategoryResponse> Update(Guid id, CategoryRequest request);
 
         Task DeleteById(Guid id);
 

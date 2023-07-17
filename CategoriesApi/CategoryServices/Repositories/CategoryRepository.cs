@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace CategoryServices.Repositories
 {
-    public class CategoryRepository : GenericRepository<Category>
+    public class CategoryRepository : IGenericRepository<Category>
     {
         private readonly SeafoodContext _context;
 

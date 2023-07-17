@@ -10,9 +10,9 @@ namespace CategoryServices.Interfaces
 {
     public interface IUserService
     {
-        Task<SignInResponse> SignIn(SignInRequest request);
+        Task<UserResponse> SignIn(SignInRequest request);
 
-        Task<SignUpResponse> SignUp(SignUpRequest request);
+        Task<UserResponse> SignUp(SignUpRequest request);
 
         Task<User> GetUserToContext(Guid id);
 
