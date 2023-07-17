@@ -14,6 +14,6 @@ namespace Seafood.CORE.Repositories.UserRepo
 
         Task<User> Login(string username, string passwordHash);
 
-        Task<User> Update(Guid Id, string username, string password, string role);
+        Task<User> Update(Guid Id, string username, string role, int sex, string mobile);
     }
 }

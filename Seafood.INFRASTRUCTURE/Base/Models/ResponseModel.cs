@@ -12,8 +12,8 @@ namespace Seafood.INFRASTRUCTURE.Base.Models
         [JsonProperty("success")]
         public bool Success { get; set; }
 
-        [JsonProperty("code")]
-        public int Code { get; set; }
+        [JsonProperty("statusCode")]
+        public int StatusCode { get; set; }
 
         [JsonProperty("message")]
         public string Message { get; set; }
@@ -24,7 +24,7 @@ namespace Seafood.INFRASTRUCTURE.Base.Models
         public ResponseModel()
         {
             Success = true;
-            Code = 200;
+            StatusCode = 200;
             Message = string.Empty;
             Data = new Dictionary<string, object>();
         }

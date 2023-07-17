@@ -25,7 +25,7 @@ namespace Seafood.CORE.MediatR.UserFuction.UpdateHandler
         }
         public async Task<UserMediatResultModel> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.Update(request.UserMediatUpdateModel.Id, request.UserMediatUpdateModel.Username, request.UserMediatUpdateModel.Password, request.UserMediatUpdateModel.Role);
+            var user = await _userRepository.Update(request.UserMediatUpdateModel.Id, request.UserMediatUpdateModel.Username, request.UserMediatUpdateModel.Role, request.UserMediatUpdateModel.Sex, request.UserMediatUpdateModel.Mobile);
             if (user != null)
             {
                 return _mapper.Map<User, UserMediatResultModel>(user);

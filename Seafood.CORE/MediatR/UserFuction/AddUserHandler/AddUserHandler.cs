@@ -38,11 +38,13 @@ namespace Seafood.CORE.MediatR.UserFuction.AddUserHandler
                     Id = Guid.NewGuid(),
                     Username = request.UserMediatModel.Username,
                     DisplayName = request.UserMediatModel.Username,
-                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.UserMediatModel.Password),
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.UserMediatModel.Password, ArchitectureContants.BCRYPT_SALT),
                     Salt = ArchitectureContants.BCRYPT_SALT,
                     IsAdminUser = request.UserMediatModel.Role.Contains("admin") ? true : false,
                     IsLocked = false,
                     Role = request.UserMediatModel.Role,
+                    Sex = request.UserMediatModel.Sex,
+                    Mobile = request.UserMediatModel.Mobile,
                 };
                 _seafoodDbContext.Users.Add(user);
                 await _seafoodDbContext.SaveChangesAsync(cancellationToken);

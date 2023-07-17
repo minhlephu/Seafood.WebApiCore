@@ -26,7 +26,7 @@ namespace Seafood.CORE.Repositories.UserRepo
         public async Task<User> Login(string username, string password)
         {
             var user = await _context.Users.SingleOrDefaultAsync(i => i.Username == username);
-            if (BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
+            if (user != null && BCrypt.Net.BCrypt.Verify(password, user.PasswordHash))
             {
                 return user;
             }
@@ -44,14 +44,15 @@ namespace Seafood.CORE.Repositories.UserRepo
         /// <param name="password"></param>
         /// <param name="role"></param>
         /// <returns></returns>
-        public async Task<User> Update(Guid Id, string username, string password, string role)
+        public async Task<User> Update(Guid Id, string username, string role, int sex, string mobile)
         {
             var user = await _context.Users.FirstOrDefaultAsync(i => i.Id == Id);
             if (user != null)
             {
                 user.Username = username;
-                user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(password);
                 user.Role = role;
+                user.Sex = sex;
+                user.Mobile = mobile;
                 _context.Users.Update(user);
                 await _context.SaveChangesAsync();
                 return user;

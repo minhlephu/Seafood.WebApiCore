@@ -11,5 +11,7 @@ namespace Seafood.CORE.MediatR.UserFuction.Model
         public string Username { get; set; }
         public string Password { get; set; }
         public string Role { get; set; }
+        public int Sex { get; set; }
+        public string Mobile { get; set; }
     }
 }

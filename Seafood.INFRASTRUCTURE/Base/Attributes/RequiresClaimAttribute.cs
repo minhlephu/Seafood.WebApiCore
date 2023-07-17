@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Seafood.INFRASTRUCTURE.Base.Models;
 
 namespace Seafood.INFRASTRUCTURE.Base.Attributes
 {
@@ -23,7 +24,7 @@ namespace Seafood.INFRASTRUCTURE.Base.Attributes
         {
             if (!context.HttpContext.User.HasClaim(_claimName, _claimValue))
             {
-                context.Result = new ForbidResult();
+                context.Result = new ObjectResult(new ResponseModel() { Message = $"{_claimName} is not {_claimValue}", StatusCode = 403}) { StatusCode = 403};
             }
         }
     }

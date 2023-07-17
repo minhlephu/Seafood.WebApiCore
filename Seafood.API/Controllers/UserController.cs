@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Seafood.CORE.MediatR.UserFuction.AddUserHandler;
 using Seafood.CORE.MediatR.UserFuction.DeleteUserHandler;
+using Seafood.CORE.MediatR.UserFuction.GetUserByIdHanlder;
 using Seafood.CORE.MediatR.UserFuction.GetUserHandler;
 using Seafood.CORE.MediatR.UserFuction.Model;
 using Seafood.CORE.MediatR.UserFuction.UpdateHandler;
@@ -18,10 +19,20 @@ namespace Seafood.API.Controllers
             var listUser = await Mediator.Send(new GetAllUserQuery());
             if (listUser != null)
             {
-                ResponseModel.Add("total", listUser.Count());
                 ResponseModel.Add("listUser", listUser);
             }
-            return StatusCode(ResponseModel.Code, ResponseModel);
+            return StatusCode(ResponseModel.StatusCode, ResponseModel);
+        }
+        [HttpGet]
+        [Route("[controller]")]
+        public async Task<ActionResult> GetById([FromQuery] string id)
+        {
+            var user = await Mediator.Send(new GetUserByIdCommand(id));
+            if (user != null)
+            {
+                ResponseModel.Add("user", user);
+            }
+            return StatusCode(ResponseModel.StatusCode, ResponseModel);
         }
 
         [Authorize]
@@ -39,19 +50,21 @@ namespace Seafood.API.Controllers
             {
                 ResponseModel.Message = "Add new user fail";
             }
-            return StatusCode(ResponseModel.Code, ResponseModel);
+            return StatusCode(ResponseModel.StatusCode, ResponseModel);
         }
 
+        [Authorize]
         [HttpPut]
         [Route("[controller]/update")]
-        public async Task<ActionResult> Update(string id, [FromBody] UserMediatModel userMediatModel)
+        public async Task<ActionResult> Update(string id, [FromBody] UserMediatVM userMediatVM)
         {
             UserMediatUpdateModel userMediatUpdateModel = new UserMediatUpdateModel()
             {
                 Id = Guid.Parse(id),
-                Username = userMediatModel.Username,
-                Password = userMediatModel.Password,
-                Role = userMediatModel.Role,
+                Username = userMediatVM.Username,
+                Role = userMediatVM.Role,
+                Sex = userMediatVM.Sex,
+                Mobile = userMediatVM.Mobile,
             };
             var user = await Mediator.Send(new UpdateUserCommand(userMediatUpdateModel));
             if (user != null)
@@ -62,9 +75,10 @@ namespace Seafood.API.Controllers
             {
                 ResponseModel.Message = "Update user fail";
             }
-            return StatusCode(ResponseModel.Code, ResponseModel);
+            return StatusCode(ResponseModel.StatusCode, ResponseModel);
         }
 
+        [Authorize]
         [HttpDelete]
         [Route("[controller]/delete")]
         public async Task<ActionResult> Delete(string id)
@@ -78,7 +92,7 @@ namespace Seafood.API.Controllers
             {
                 ResponseModel.Message = "Delete user fail";
             }
-            return StatusCode(ResponseModel.Code, ResponseModel);
+            return StatusCode(ResponseModel.StatusCode, ResponseModel);
         }
     }
 }
