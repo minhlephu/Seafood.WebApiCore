@@ -78,7 +78,7 @@ app.UseSession();
 
 // Middleware
 app.UseMiddleware<FirstMiddleware>();
-app.UseMiddleware<SessionMiddleware>();
+//app.UseMiddleware<SessionMiddleware>();
 
 //app.UseMiddleware<LoggingMiddleware>();
 //app.UseMiddleware<AuthenticationMiddleware>();

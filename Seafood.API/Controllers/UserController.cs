@@ -19,14 +19,16 @@ namespace Seafood.API.Controllers
             _contextAccessor = contextAccessor;
         }
 
+        #region TestSession
+
         [HttpGet]
-        [Route("tmp")]
+        [Route("testSession/tmp")]
         public async Task<ActionResult> Tmp()
         {
             return Ok("okokok " + DateTime.Now.ToString());
         }
         [HttpGet]
-        [Route("tmp/get")]
+        [Route("testSession/tmp/get")]
         public async Task<ActionResult> TmpGet()
         {
             var tmp = new
@@ -39,12 +41,14 @@ namespace Seafood.API.Controllers
             return Ok(tmp);
         }
         [HttpGet]
-        [Route("tmp/set")]
+        [Route("testSession/tmp/set")]
         public async Task<ActionResult> TmpSet()
         {
             _contextAccessor.HttpContext.Session.SetString("tmp", DateTime.Now.AddSeconds(10).ToString());
             return Ok("Set ok " + DateTime.Now.ToString());
         }
+
+        #endregion
 
         [HttpGet]
         [Route("[controller]/getall")]
