@@ -8,6 +8,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Seafood.API.Middlewares;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Seafood.ARCHITECTURE.Constants;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +21,26 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 #region 3864 my config
+
+// Configuration Session
+builder.Services.AddHttpContextAccessor();
+builder.Services.AddDistributedMemoryCache();
+builder.Services.AddSession(options =>
+{
+    // Set a short timeout for easy testing.
+    options.IdleTimeout = TimeSpan.FromSeconds(ArchitectureContants.SESSION_EXPIRE_SECOND);
+    options.Cookie.HttpOnly = true;
+});
+
+//builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+//.AddCookie(options =>
+//{
+//    options.LoginPath = "/User/Login";
+//    options.AccessDeniedPath = "/User/Login";
+//    options.LogoutPath = "/User/Logout";
+//    options.SlidingExpiration = true;
+//    options.ExpireTimeSpan = TimeSpan.FromSeconds(5);
+//});
 
 // Config Security JWT
 builder.Services.AddJwtConfig();
@@ -51,8 +73,13 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 #region 3864 my config
+// Session
+app.UseSession();
+
 // Middleware
 app.UseMiddleware<FirstMiddleware>();
+app.UseMiddleware<SessionMiddleware>();
+
 //app.UseMiddleware<LoggingMiddleware>();
 //app.UseMiddleware<AuthenticationMiddleware>();
 //app.UseMiddleware<RoutingMiddleware>();

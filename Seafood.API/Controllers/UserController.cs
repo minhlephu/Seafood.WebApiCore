@@ -12,6 +12,40 @@ namespace Seafood.API.Controllers
 {
     public class UserController : ApiControllerBase<UserController>
     {
+        private readonly IHttpContextAccessor _contextAccessor;
+
+        public UserController(IHttpContextAccessor contextAccessor)
+        {
+            _contextAccessor = contextAccessor;
+        }
+
+        [HttpGet]
+        [Route("tmp")]
+        public async Task<ActionResult> Tmp()
+        {
+            return Ok("okokok " + DateTime.Now.ToString());
+        }
+        [HttpGet]
+        [Route("tmp/get")]
+        public async Task<ActionResult> TmpGet()
+        {
+            var tmp = new
+            {
+                SessionId = _contextAccessor.HttpContext.Session.Id.ToString(),
+                SessionModel = _contextAccessor.HttpContext.Session.GetString("AccessTokenSession"),
+                SessionTmp = _contextAccessor.HttpContext.Session.GetString("tmp"),
+                Now = DateTime.Now.ToString(),
+            };
+            return Ok(tmp);
+        }
+        [HttpGet]
+        [Route("tmp/set")]
+        public async Task<ActionResult> TmpSet()
+        {
+            _contextAccessor.HttpContext.Session.SetString("tmp", DateTime.Now.AddSeconds(10).ToString());
+            return Ok("Set ok " + DateTime.Now.ToString());
+        }
+
         [HttpGet]
         [Route("[controller]/getall")]
         public async Task<ActionResult> GetAll()
@@ -35,8 +69,9 @@ namespace Seafood.API.Controllers
             return StatusCode(ResponseModel.StatusCode, ResponseModel);
         }
 
-        [Authorize]
-        [RequiresClaim("Role", "superadmin")]
+        //[Authorize]
+        [SessionAuthorize]
+        //[RequiresClaim("Role", "superadmin")]
         [HttpPost]
         [Route("[controller]/add")]
         public async Task<ActionResult> Add([FromBody] UserMediatModel userMediatModel)

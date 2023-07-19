@@ -16,6 +16,7 @@ using Seafood.INFRASTRUCTURE.Base.Models;
 using System.Runtime.CompilerServices;
 using Seafood.CORE.Repositories.UserRepo;
 using Seafood.ARCHITECTURE.Constants;
+using Microsoft.AspNetCore.Http;
 
 namespace Seafood.CORE.MediatR.AuthenticationFunction.LoginHandler
 {
@@ -59,6 +60,8 @@ namespace Seafood.CORE.MediatR.AuthenticationFunction.LoginHandler
             {
                 var loginMediatResultModel = _mapper.Map<User, LoginMediatResultModel>(user);
                 loginMediatResultModel.AccessToken = _jwtService.CreateToken(_mapper.Map<LoginMediatResultModel, JwtModel>(loginMediatResultModel));
+
+
                 return loginMediatResultModel;
             }
             else

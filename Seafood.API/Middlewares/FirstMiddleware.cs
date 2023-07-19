@@ -13,7 +13,7 @@ namespace Seafood.API.Middlewares
             _next = next;
         }
 
-        public async Task InvokeAsync(HttpContext context)
+        public async Task InvokeAsync(HttpContext context, IHttpContextAccessor httpContextAccessor)
         {
             await _next(context);
 

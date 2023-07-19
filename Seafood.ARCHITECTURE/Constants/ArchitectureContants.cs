@@ -24,5 +24,8 @@ namespace Seafood.ARCHITECTURE.Constants
         // SECURITY
         public const int BCRYPT_SALT = 11;
         public const HashType BCRYPT_HASHTYPE = HashType.SHA384;
+
+        // SESSION
+        public const int SESSION_EXPIRE_SECOND = 10;
     }
 }
