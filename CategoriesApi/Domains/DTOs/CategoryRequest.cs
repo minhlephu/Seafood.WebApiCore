@@ -17,5 +17,7 @@ namespace Domains.DTOs
         public string? Code { get; set; }
 
         public string? Icon { get; set; }
+
+        public bool? IsDeleted { get; set; }
     }
 }
