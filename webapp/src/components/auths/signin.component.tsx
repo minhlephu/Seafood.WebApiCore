@@ -15,6 +15,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import userAPI from "../../apis/UserAPI";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { sign } from "crypto";
 
 const SignInComponent = () => {
   const navigate = useNavigate();
@@ -23,16 +24,20 @@ const SignInComponent = () => {
     userName: "",
     password: "",
   });
+  const [loginError, setLoginError] = useState("");
+  const [input, setInput] = useState({ userName: "", password: "" });
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     userAPI
       .signIn(signInModel.userName, signInModel.password)
-      .then((res) => {
-        console.log(res);
+      .then(() => {
         navigate("/dashboards");
       })
-      .catch((error) => console.log(error));
+      .catch(() => {
+        setLoginError("Username or password is incorrect");
+        setInput({userName : signInModel.userName, password : signInModel.password})
+      });
   };
 
   const handleInputUserName = (userName: string) => {
@@ -90,11 +95,12 @@ const SignInComponent = () => {
           </Typography>
           <Box
             component="form"
-            noValidate
+            noValidate={false}
             onSubmit={handleSubmit}
             sx={{ mt: 1 }}
           >
             <TextField
+              error={loginError === "" || input.userName !== signInModel.userName ? false : true}
               margin="normal"
               required
               fullWidth
@@ -103,11 +109,13 @@ const SignInComponent = () => {
               name="userName"
               autoComplete="userName"
               autoFocus
+              helperText={loginError === "" ? "" : loginError}
               onChange={(e) => {
                 handleInputUserName(e.target.value);
               }}
             />
             <TextField
+              error={loginError === "" || input.userName !== signInModel.userName ? false : true}
               margin="normal"
               required
               fullWidth
