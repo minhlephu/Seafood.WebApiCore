@@ -1,0 +1,28 @@
+﻿@model Common.Base.ViewModel.UserModel;
+
+<!-- Modal -->
+<div class="modal fade" id="DeleteUser-@Model.Id" aria-labelledby="DeleteUserLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Delete User</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-body">
+                <form asp-action="Delete" method="post">
+                    <div asp-validation-summary="ModelOnly" class="text-danger" />
+                    <div class="form-group">
+                        <input type="hidden" asp-for="Id"/>
+                        <p>Are you sure delete?</p>
+                    </div>
+
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                        <button type="submit" class="btn btn-primary">Yes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

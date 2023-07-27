@@ -1,0 +1,233 @@
+﻿@model IEnumerable<Common.Base.ViewModel.UserModel>
+
+@{
+    ViewData["Title"] = "Index";
+    int index = 1;
+}
+
+<body>
+
+
+    <div class="card m-lg-5">
+        <div class="card-body">
+
+            <h5 class="header-title">List User</h5>
+
+            <button type="button" class="btn btn-primary mt-2 mb-2" data-bs-toggle="modal" data-bs-target="#CreateUser">
+                Create new User
+            </button>
+            @await Html.PartialAsync("_CreateModal.cshtml", new Common.Base.ViewModel.UserModel())
+
+            <div class="table-responsive m-lg-1">
+                <table class="table table-centered mb-0" id="btn-editable">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>Role</th>
+                            <th>Sex</th>
+                            <th>Mobile</th>
+                            <th class="tabledit-toolbar-column">Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+                            <tr id="@index">
+                                <td><span class="tabledit-span tabledit-identifier">@index</span><input class="tabledit-input tabledit-identifier" type="hidden" name="id" value="" disabled=""></td>
+                                <td class="tabledit-view-mode"><span class="tabledit-span">@item.Username</span><input class="tabledit-input form-control form-control-sm" type="text" name="col1" value="Tiger Nixon" style="display: none;" disabled=""></td>
+                                <td class="tabledit-view-mode"><span class="tabledit-span">@item.Role</span><input class="tabledit-input form-control form-control-sm" type="text" name="col3" value="Edinburgh" style="display: none;" disabled=""></td>
+                                <td class="tabledit-view-mode"><span class="tabledit-span">@item.Sex</span><input class="tabledit-input form-control form-control-sm" type="text" name="col4" value="61" style="display: none;" disabled=""></td>
+                                <td class="tabledit-view-mode"><span class="tabledit-span">@item.Mobile</span><input class="tabledit-input form-control form-control-sm" type="text" name="col4" value="61" style="display: none;" disabled=""></td>
+
+                                <td class="row-2">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@("#EditUser-"+item.Id)">
+                                        Edit
+                                    </button>
+
+                                    @await Html.PartialAsync("_EditModal.cshtml", item)
+
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="@("#DeleteUser-"+item.Id)">
+                                        Delete
+                                        </button>
+
+                                    @await Html.PartialAsync("_DeleteModal.cshtml", item)
+                                </td>
+                            </tr>
+
+
+                            index++;
+                        }
+                    </tbody>
+                </table>
+            </div> <!-- end .table-responsive-->
+        </div> <!-- end card-body -->
+    </div>
+
+</body>
+
+@*
+<div>
+    <p>
+        <a asp-action="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Id)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Username)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PasswordHash)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Salt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DisplayName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Avarta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Birthday)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Sex)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Mobile)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Company)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Role)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsAdminUser)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsLocked)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Session)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SessionId)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.IsDeleted)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeletedAt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.DeletedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedAt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdatedAt)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.UpdatedBy)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Id)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Username)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PasswordHash)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Salt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DisplayName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Avarta)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Birthday)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Sex)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Mobile)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Company)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Role)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsAdminUser)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsLocked)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Session)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SessionId)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.IsDeleted)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeletedAt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DeletedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedAt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdatedAt)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.UpdatedBy)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>*@
