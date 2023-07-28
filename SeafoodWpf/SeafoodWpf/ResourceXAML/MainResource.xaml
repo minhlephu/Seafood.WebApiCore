@@ -1,7 +1,0 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:viewmodel="clr-namespace:SeafoodWpf.ViewModel"
-                    xmlns:local="clr-namespace:SeafoodWpf.ResourceXAML">
-
-    <viewmodel:MainViewModel x:Key="MainVM"/>
-</ResourceDictionary>

@@ -3,12 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33829.357
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SeafoodWpf", "SeafoodWpf\SeafoodWpf.csproj", "{ED1EE5AE-3E4F-4ACF-BCC6-4B1081038AE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeafoodWpf.APPLICATION", "SeafoodWpf.APPLICATION\SeafoodWpf.APPLICATION.csproj", "{06AA9913-D15D-48B1-A47E-50D5D1ECF2B5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MyNote", "MyNote", "{C12243DA-CEF9-48DB-ABDA-DF9CF2E359EC}"
-	ProjectSection(SolutionItems) = preProject
-		MyNote.txt = MyNote.txt
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeafoodWpf.BUSINESS", "SeafoodWpf.BUSINESS\SeafoodWpf.BUSINESS.csproj", "{0D841EB3-CEBA-4323-A546-7158435BC473}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SeafoodWpf.COMMON", "SeafoodWpf.COMMON\SeafoodWpf.COMMON.csproj", "{F08A3AD0-770C-4D08-A495-0ACF5BF3DBD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,15 +15,23 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{ED1EE5AE-3E4F-4ACF-BCC6-4B1081038AE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED1EE5AE-3E4F-4ACF-BCC6-4B1081038AE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED1EE5AE-3E4F-4ACF-BCC6-4B1081038AE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED1EE5AE-3E4F-4ACF-BCC6-4B1081038AE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{06AA9913-D15D-48B1-A47E-50D5D1ECF2B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06AA9913-D15D-48B1-A47E-50D5D1ECF2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06AA9913-D15D-48B1-A47E-50D5D1ECF2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06AA9913-D15D-48B1-A47E-50D5D1ECF2B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D841EB3-CEBA-4323-A546-7158435BC473}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D841EB3-CEBA-4323-A546-7158435BC473}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D841EB3-CEBA-4323-A546-7158435BC473}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D841EB3-CEBA-4323-A546-7158435BC473}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F08A3AD0-770C-4D08-A495-0ACF5BF3DBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F08A3AD0-770C-4D08-A495-0ACF5BF3DBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F08A3AD0-770C-4D08-A495-0ACF5BF3DBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F08A3AD0-770C-4D08-A495-0ACF5BF3DBD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {DB32C138-CBEF-4CDC-81A0-C5205E856ADB}
+		SolutionGuid = {D629A657-F306-4E79-808E-7BE4E2B0EEFD}
 	EndGlobalSection
 EndGlobal

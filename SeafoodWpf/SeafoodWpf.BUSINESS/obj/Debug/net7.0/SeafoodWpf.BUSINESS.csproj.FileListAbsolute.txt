@@ -1,0 +1,15 @@
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\bin\Debug\net7.0\SeafoodWpf.BUSINESS.deps.json
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\bin\Debug\net7.0\SeafoodWpf.BUSINESS.dll
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\bin\Debug\net7.0\SeafoodWpf.BUSINESS.pdb
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\bin\Debug\net7.0\SeafoodWpf.COMMON.dll
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\bin\Debug\net7.0\SeafoodWpf.COMMON.pdb
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.csproj.AssemblyReference.cache
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.AssemblyInfoInputs.cache
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.AssemblyInfo.cs
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.csproj.CoreCompileInputs.cache
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.csproj.CopyComplete
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.dll
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\refint\SeafoodWpf.BUSINESS.dll
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\SeafoodWpf.BUSINESS.pdb
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.BUSINESS\obj\Debug\net7.0\ref\SeafoodWpf.BUSINESS.dll

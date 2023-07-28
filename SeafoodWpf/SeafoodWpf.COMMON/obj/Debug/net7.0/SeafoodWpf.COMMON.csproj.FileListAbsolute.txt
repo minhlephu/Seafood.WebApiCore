@@ -1,0 +1,14 @@
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\bin\Debug\net7.0\SeafoodWpf.COMMON.deps.json
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\bin\Debug\net7.0\SeafoodWpf.COMMON.runtimeconfig.json
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\bin\Debug\net7.0\SeafoodWpf.COMMON.dll
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\bin\Debug\net7.0\SeafoodWpf.COMMON.pdb
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.csproj.AssemblyReference.cache
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.AssemblyInfoInputs.cache
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.AssemblyInfo.cs
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.csproj.CoreCompileInputs.cache
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.dll
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\refint\SeafoodWpf.COMMON.dll
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.pdb
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\SeafoodWpf.COMMON.genruntimeconfig.cache
+C:\Users\dung.phanvantien\Desktop\Temp\SeafoodWpf\SeafoodWpf.COMMON\obj\Debug\net7.0\ref\SeafoodWpf.COMMON.dll

@@ -1,0 +1,243 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.APPLICATION\\SeafoodWpf.APPLICATION.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.APPLICATION\\SeafoodWpf.APPLICATION.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.APPLICATION\\SeafoodWpf.APPLICATION.csproj",
+        "projectName": "SeafoodWpf.APPLICATION",
+        "projectPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.APPLICATION\\SeafoodWpf.APPLICATION.csproj",
+        "packagesPath": "C:\\Users\\dung.phanvantien\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.APPLICATION\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\dung.phanvantien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0-windows"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0-windows7.0": {
+            "targetAlias": "net7.0-windows",
+            "projectReferences": {
+              "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.BUSINESS\\SeafoodWpf.BUSINESS.csproj": {
+                "projectPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.BUSINESS\\SeafoodWpf.BUSINESS.csproj"
+              },
+              "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\SeafoodWpf.COMMON.csproj": {
+                "projectPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\SeafoodWpf.COMMON.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0-windows7.0": {
+          "targetAlias": "net7.0-windows",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
+            "MaterialDesignThemes": {
+              "target": "Package",
+              "version": "[4.9.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "Microsoft.Extensions.Hosting": {
+              "target": "Package",
+              "version": "[7.0.1, )"
+            },
+            "System.Windows.Interactivity.WPF": {
+              "target": "Package",
+              "version": "[2.0.20525, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            },
+            "Microsoft.WindowsDesktop.App.WPF": {
+              "privateAssets": "none"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.BUSINESS\\SeafoodWpf.BUSINESS.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.BUSINESS\\SeafoodWpf.BUSINESS.csproj",
+        "projectName": "SeafoodWpf.BUSINESS",
+        "projectPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.BUSINESS\\SeafoodWpf.BUSINESS.csproj",
+        "packagesPath": "C:\\Users\\dung.phanvantien\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.BUSINESS\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\dung.phanvantien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {
+              "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\SeafoodWpf.COMMON.csproj": {
+                "projectPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\SeafoodWpf.COMMON.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\SeafoodWpf.COMMON.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\SeafoodWpf.COMMON.csproj",
+        "projectName": "SeafoodWpf.COMMON",
+        "projectPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\SeafoodWpf.COMMON.csproj",
+        "packagesPath": "C:\\Users\\dung.phanvantien\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\dung.phanvantien\\Desktop\\Temp\\SeafoodWpf\\SeafoodWpf.COMMON\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\dung.phanvantien\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.9, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[7.0.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.306\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
