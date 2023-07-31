@@ -3,7 +3,7 @@ import authHeader from "../commons/auth-header.common";
 
 
 class BaseAPI<T> {
-    protected base_url = "http://10.1.27.114:1239/api/";
+    protected base_url = "http://10.1.43.52:1239/api/";
 
     constructor(path: string){
         this.base_url += path;
