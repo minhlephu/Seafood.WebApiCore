@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Application\\Seafood.Application.csproj": {}
+    "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Application\\Seafood.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Application\\Seafood.Application.csproj": {
+    "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Application\\Seafood.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Application\\Seafood.Application.csproj",
+        "projectUniqueName": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Application\\Seafood.Application.csproj",
         "projectName": "Seafood.Application",
-        "projectPath": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Application\\Seafood.Application.csproj",
+        "projectPath": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Application\\Seafood.Application.csproj",
         "packagesPath": "C:\\Users\\hieu.trinhduc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Application\\obj\\",
+        "outputPath": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Application\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hieu.trinhduc\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,8 +28,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Data\\Seafood.Data.csproj": {
-                "projectPath": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Data\\Seafood.Data.csproj"
+              "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Data\\Seafood.Data.csproj": {
+                "projectPath": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Data\\Seafood.Data.csproj"
               }
             }
           }
@@ -63,14 +63,14 @@
         }
       }
     },
-    "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Data\\Seafood.Data.csproj": {
+    "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Data\\Seafood.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Data\\Seafood.Data.csproj",
+        "projectUniqueName": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Data\\Seafood.Data.csproj",
         "projectName": "Seafood.Data",
-        "projectPath": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Data\\Seafood.Data.csproj",
+        "projectPath": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Data\\Seafood.Data.csproj",
         "packagesPath": "C:\\Users\\hieu.trinhduc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\Seafood.Data\\obj\\",
+        "outputPath": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\Seafood.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\hieu.trinhduc\\AppData\\Roaming\\NuGet\\NuGet.Config",

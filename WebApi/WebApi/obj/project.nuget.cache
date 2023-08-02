@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hStk6nWXJqn+COxbp4+KrMTXbjUHK9yK9WL8hXQGe9dKLbZZLjoDHqfQfrw6Uug6qAtB47z81qFPx4jVT+5Jcw==",
+  "dgSpecHash": "aE6nTrNAvsMbAqsMWN6o/tsBTteA3CuEUr72It5h2HgQko/6Bw8kMHYU9x4gi6Aw5Z2CRTzJXTNjjNE49OgSRQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\hieu.trinhduc\\source\\repos\\WebApi\\WebApi\\Seafood.WebApi.csproj",
+  "projectFilePath": "C:\\Users\\hieu.trinhduc\\Documents\\GitHub\\Seafood.WebApiCore\\WebApi\\WebApi\\Seafood.WebApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\hieu.trinhduc\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\hieu.trinhduc\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

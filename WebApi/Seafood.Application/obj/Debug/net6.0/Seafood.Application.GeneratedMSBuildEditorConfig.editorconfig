@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Seafood.Application
-build_property.ProjectDir = C:\Users\hieu.trinhduc\source\repos\WebApi\Seafood.Application\
+build_property.ProjectDir = C:\Users\hieu.trinhduc\Documents\GitHub\Seafood.WebApiCore\WebApi\Seafood.Application\
